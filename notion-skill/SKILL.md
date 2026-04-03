@@ -48,64 +48,35 @@ export NOTION_PROFILE=work
 
 ## Pages
 
-**Read page:**
+Use whatever Notion interface is available (MCP tools, REST API, etc.). Operations below are semantic.
 
-```bash
-notion-cli page get <page_id>
-```
+**Read page:** Fetch page by ID → returns content + properties.
 
-**Append blocks:**
+**Append content:** Add blocks to a page (prefer markdown format). Prefer appending over rewriting.
 
-```bash
-notion-cli block append <page_id> --markdown "..."
-```
-
-Prefer appending over rewriting content.
-
-**Create page:**
-
-```bash
-notion-cli page create --parent <page_id> --title "..."
-```
+**Create page:** Create a new page under a parent page or database with title and optional content.
 
 ## Databases
 
-**Inspect schema:**
+**Inspect schema:** Fetch a database to see its property schema (field names, types, options).
 
-```bash
-notion-cli db get <database_id>
-```
+**Query database:** Search/filter within a database by properties. Supports filters (equality, date ranges, etc.) and sorting.
 
-**Query database:**
+**Create row:** Create a page within a database, setting properties as key-value pairs.
 
-```bash
-notion-cli db query <database_id> --filter <json> --sort <json>
-```
+**Update row:** Update an existing page's properties or content.
 
-**Create row:**
-
-```bash
-notion-cli page create --database <database_id> --props <json>
-```
-
-**Update row:**
-
-```bash
-notion-cli page update <page_id> --props <json>
-```
+### Property format notes
+- Text/select: `{"Field Name": "value"}`
+- Date: use ISO format with datetime flag if needed
+- Relation: array of page URLs or IDs
+- Check your Notion tool's docs for exact syntax — it varies by provider.
 
 ## Schema changes (advanced)
 
-Always inspect diffs before applying schema changes.
+Always inspect the current schema before making changes.
 
-Never modify database schema without explicit confirmation.
-
-Recommended flow:
-
-```bash
-notion-cli db schema diff <database_id> --desired <json>
-notion-cli db schema apply <database_id> --desired <json>
-```
+Never modify database schema without explicit user confirmation.
 
 ## Safety notes
 
