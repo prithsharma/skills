@@ -54,12 +54,16 @@ Format:
 
 🏗️ OS Roadmap — Current State
 - Status of major workstreams
+
+🧵 Open Threads
+- <https://your-workspace.slack.com/archives/CHANNEL/pTHREADTS|Thread title> — one-line status
 ```
 
 Rules:
 - **Only include items from the target date** — do not bleed in previous/next day's work
 - No "Next" section — removed for brevity
 - Source tag: `[source: report-os-workday skill]`
+- **Open Threads section:** scan `discussions/trails/` for trail files where `Status` is NOT `concluded` / `archived`. For each, include a Slack deep link and a one-line summary of what's still open. Format the link as `https://your-workspace.slack.com/archives/<channelId>/p<threadTs-without-dot>`. If no open trails, omit the section.
 
 ### 4. Deliver
 
