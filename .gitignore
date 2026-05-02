@@ -1,3 +1,4 @@
 .DS_Store
-.DS_Store
-devrev-internal/
+
+# Private skill repositories (add your private nested repos here)
+private-skills/
