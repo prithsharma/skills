@@ -2,3 +2,6 @@
 
 # Private skill repositories (add your private nested repos here)
 private-skills/
+
+# Third-party cloned skills
+vendor/
