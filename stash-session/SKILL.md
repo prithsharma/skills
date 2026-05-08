@@ -1,10 +1,26 @@
 ---
 name: stash-session
-description: Stash the current session for later resumption. Creates a metadata file in ~/os/stashed/ with session ID and context for easy browsing and resuming later.
+description: Bookmark a session for later resumption. Use when switching contexts or pausing work to come back later. NOT for saving project continuity within an ongoing conversation (use CLAUDE.md for that).
 disable-model-invocation: false
 ---
 
-Stash this session for later resumption.
+Bookmark this session so it can be resumed later with `/browse-stashed-sessions` and `/resume`.
+
+## When to use this skill
+
+✅ **Use stash-session when:**
+- User says "stash this session", "pause this work", "bookmark this"
+- Switching to work on a different project/task
+- Ending work on something to resume days/weeks later
+- Want to catalog this session for future reference
+
+❌ **Don't use stash-session when:**
+- User says "save context", "end of session" (without clear pause intent)
+- Just documenting current state for **ongoing** work on same project
+- User wants continuity notes for same conversation thread
+- → Instead: Update CLAUDE.md in the project with current state
+
+## What to do
 
 ## What to do
 
